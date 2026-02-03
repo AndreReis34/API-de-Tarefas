@@ -14,7 +14,7 @@ def create_app():
 	db.init_app(app)
 	Migrate(app, db)
 	JWTManager(app)
-	CORS(app, resources={r"/*": {"origins": "gerente-de-tarefas-front-end-production.up.railway.app:8080"}})
+	CORS(app)
 
 	app.register_blueprint(auth_bp)
 	app.register_blueprint(tasks_bp)
